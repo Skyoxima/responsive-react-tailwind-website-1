@@ -1,5 +1,5 @@
-import React from 'react'
-import Typed from 'react-typed'
+import Typewriter from 'react-typewriter-animate' //best typewriter module! https://www.npmjs.com/package/react-typewriter-animate https://github.com/doanhtu07/react-typewriter-animate
+import 'react-typewriter-animate/dist/Typewriter.css'
 
 const Hero = () => {
     return (
@@ -12,12 +12,25 @@ const Hero = () => {
                     <p className='md:text-4xl sm:text-3xl text-xl font-bold'>
                         Fast, flexible financing for
                     </p>
-                    <Typed 
-                        strings={['BTB', 'BTC', 'SASS']}
-                        typeSpeed={120}
-                        backSpeed={140}
-                        loop
-                        className='md:pl-3 pl-2 md:text-4xl sm:text-3xl text-xl font-bold text-[#696969]' />
+                    <Typewriter 
+                        dataToRotate={[
+                            [
+                                { type: 'word', text: 'BTB' },
+                            ],
+                            [
+                                { type: 'word', text: 'BTC' },
+                            ],
+                            [
+                                { type: 'word', text: 'SASS' },
+                            ]
+                        ]}
+                        cursor={{ cursorBlinkRate: '600ms' }}
+                        loop={true}
+                        maxTypeSpeed={120}
+                        maxDeleteSpeed={140}
+                        contentClass='md:pl-3 pl-2 md:text-4xl sm:text-3xl text-xl font-bold text-[#696969]'
+                        cursorClass='md:text-4xl sm:text-3xl text-xl font-bold text-[#696969]'
+                    />
                 </div>
                 <p className='md:text-2xl text-xl font-bold text-[#696969]'>Monitor your data analytics to increase revenue for BTB, BTC & SASS platforms.</p>
                 <button className='w-[200px] my-6 py-3 rounded-md bg-[#00df9a] text-black font-semibold'>Get Started</button>
